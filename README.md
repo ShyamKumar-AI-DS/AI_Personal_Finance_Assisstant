@@ -23,12 +23,12 @@ An intelligent financial assistant that transforms raw transaction data into act
 
 | Category | Technology |
 | :--- | :--- |
-| **Language** | Python 3.9+ |
+| **Language** | Python 3.13 |
 | **Interface** | Streamlit |
-| **LLM Inference** | Groq (Llama models) |
+| **LLM Inference** | Groq (OpenAI 20b OSS) |
 | **Embeddings** | SentenceTransformers (`all-MiniLM-L6-v2`) |
 | **Vector Store** | ChromaDB |
-| **Data Handling** | Pandas, Openpyxl |
+| **Data Handling** | Pandas, Numpy, Openpyxl |
 
 ---
 
