@@ -109,8 +109,8 @@ class FinancialAdvisor:
                     "content": prompt
                 }
             ],
-            model="openai/gpt-oss-120b", 
-            temperature=0.6,
+            model="llama-3.3-70b-versatile", 
+            temperature=0.2,
         )
         
         return completion.choices[0].message.content
