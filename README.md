@@ -45,24 +45,45 @@ The system is built with a modular approach to ensure scalability and easy debug
 
 ## 🚀 Project Phases
 
-### 1. Data Ingestion (`loader.py`)
-Creates a robust pipeline to handle messy user data:
-* Standardizes column names to `snake_case`.
-* Parses dates and normalizes numerical amounts.
-* Removes duplicates to ensure data integrity.
+### Phase 1: Data Ingestion & Preprocessing (`loader.py`)
+*   **Objective**: Create a robust pipeline to handle messy user data.
+*   **Features**:
+    *   Supports `.csv` and `.xlsx` formats.
+    *   Standardizes column names (snake_case).
+    *   Parses dates and normalizes numerical amounts.
+    *   Removes duplicates to ensure data integrity.
 
-### 2. Analytics Engine (`analytics.py` & `categorizer.py`)
-Extracts meaningful insights:
-* **Trend Analysis**: Tracking the "burn rate" and savings ratio across months.
-* **Overspending Alerts**: Flags categories exceeding 1.2x historical averages.
+### Phase 2: Financial Analytics Engine (`analytics.py` & `categorizer.py`)
+*   **Objective**: Extract meaningful insights from the cleaned data.
+*   **Features**:
+    *   **Trend Analysis**: Monthly income vs. expense tracking.
+    *   **Subscription Detection**: Identifies recurring charges based on amount and frequency (e.g., Netflix, Gym).
+    *   **Overspending Alerts**: Flags categories where current spending exceeds the historical average by a threshold (default 1.2x).
+    *   **Categorization**: Splits data into Income and Expense streams for visualization.
 
-### 3. RAG Knowledge Base (`rag.py`)
-Equips the AI with expert knowledge:
-* **Vector Search**: Uses `ChromaDB` to fetch specific strategies (e.g., "Debt Snowball") based on the user's current financial situation.
+### Phase 3: RAG Knowledge Base (`rag.py`)
+*   **Objective**: Equip the AI with expert financial knowledge.
+*   **Implementation**:
+    *   **Embeddings**: Uses `SentenceTransformer` (`all-MiniLM-L6-v2`) to convert text into vector embeddings.
+    *   **Vector Store**: Uses `ChromaDB` to store and retrieve budgeting guidelines.
+    *   **Retrieval**: Fetches relevant financial strategies based on the user's specific financial situation (e.g., "debt reduction" strategies if savings are negative).
 
-### 4. AI Advisor Agent (`advisor.py`)
-The "brain" of the operation. It synthesizes the analytics report and RAG context into a human-readable action plan using **Groq**.
----
+### Phase 4: AI Advisor Agent (`advisor.py`)
+*   **Objective**: Synthesize data and knowledge into human-readable advice.
+*   **Workflow**:
+    1.  Receives the structured report from the Analytics Engine.
+    2.  Queries the RAG system for relevant context.
+    3.  Constructs a detailed prompt containing the user's financial health, alerts, and retrieved strategies.
+    4.  Calls the LLM (via Groq) to generate a personalized "Executive Summary" and "Action Plan".
+
+### Phase 5: User Interface (`app.py`)
+*   **Objective**: Provide an interactive dashboard for the user.
+*   **Tech Stack**: Streamlit.
+*   **Features**:
+    *   File uploader.
+    *   Interactive metric cards (Income, Expense, Savings).
+    *   Charts (Expense Breakdown, Monthly Trends).
+    *   "Generate Plan" button to trigger the AI Advisor.
 
 ## 📂 File Structure
 ~~~
