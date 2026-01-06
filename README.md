@@ -1,16 +1,47 @@
 # 💰 AI Personal Finance Agent
 
-An intelligent financial assistant that analyzes your personal transaction data, detects spending patterns, and uses Retrieval-Augmented Generation (RAG) to provide actionable, expert financial advice.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B.svg)](https://streamlit.io/)
+[![Groq](https://img.shields.io/badge/LLM-Groq-orange.svg)](https://groq.com/)
+[![VectorDB](https://img.shields.io/badge/VectorDB-ChromaDB-blueviolet.svg)](https://www.trychroma.com/)
 
-## 📋 Project Overview
+An intelligent financial assistant that transforms raw transaction data into actionable, expert financial advice. By leveraging **Retrieval-Augmented Generation (RAG)**, the agent provides personalized coaching based on proven budgeting frameworks like the 50/30/20 rule.
 
-This project is designed to bridge the gap between raw financial data and personalized financial coaching. By combining traditional data analytics with Generative AI, the system not only tells you *what* you spent but *how* to improve your financial health based on proven budgeting strategies (e.g., 50/30/20 rule, Zero-Based Budgeting).
+---
+
+## 🌟 Key Features
+
+* 📊 **Automated Ingestion**: Support for `.csv` and `.xlsx` bank statements with automatic cleaning.
+* 🔍 **Smart Analytics**: Monthly trend tracking and automated categorization of Income vs. Expenses.
+* 🚫 **Subscription Detective**: Automatically identifies recurring charges (Netflix, Gym, etc.).
+* 🧠 **RAG-Powered Advice**: Combines your financial data with a knowledge base of expert budgeting strategies.
+* 🤖 **AI Executive Summary**: Generates a high-level overview and a step-by-step action plan using LLMs.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology |
+| :--- | :--- |
+| **Language** | Python 3.9+ |
+| **Interface** | Streamlit |
+| **LLM Inference** | Groq (Llama models) |
+| **Embeddings** | SentenceTransformers (`all-MiniLM-L6-v2`) |
+| **Vector Store** | ChromaDB |
+| **Data Handling** | Pandas, Openpyxl |
+
+---
 
 ## 🏗️ Architecture
 
-The system follows a modular architecture separating data processing, analysis, knowledge retrieval, and the user interface.
-<img width="800" height="533" alt="image" src="https://github.com/user-attachments/assets/fa0ac895-4074-41a1-bc39-8e5d47584e45" />
+The system is built with a modular approach to ensure scalability and easy debugging.
 
+> [!TIP]
+> The separation of the **Analytics Engine** from the **AI Advisor** ensures the LLM receives structured, factual data, reducing potential hallucinations.
+
+<img width="800" alt="Architecture Diagram" src="https://github.com/user-attachments/assets/fa0ac895-4074-41a1-bc39-8e5d47584e45" />
+
+---
 
 ## 🚀 Project Phases
 
@@ -55,24 +86,26 @@ The system follows a modular architecture separating data processing, analysis, 
     *   "Generate Plan" button to trigger the AI Advisor.
 
 ## 📂 File Structure
-
-| File | Description |
-|------|-------------|
-| `src/app.py` | Main entry point. Streamlit dashboard application. |
-| `src/loader.py` | Handles file loading, cleaning, and normalization. |
-| `src/analytics.py` | Core logic for calculating totals, trends, and alerts. |
-| `src/categorizer.py` | Helper for categorization and generating chart data. |
-| `src/rag.py` | Manages the Vector Database and document retrieval. |
-| `src/advisor.py` | Orchestrates the analysis and LLM interaction. |
-| `src/budget_guidelines.py` | (Optional) Source text data for the RAG knowledge base. |
+~~~
+├── src/
+│   ├── app.py           # Streamlit Dashboard UI
+│   ├── loader.py        # Data cleaning & normalization
+│   ├── analytics.py     # Financial logic & trend detection
+│   ├── categorizer.py   # Chart data generation
+│   ├── rag.py           # Vector DB & retrieval logic
+│   └── advisor.py       # LLM orchestration
+├── .env                 # API Keys (Git ignored)
+└── requirements.txt     # Project dependencies
+~~~
 
 ## 🛠️ Setup & Installation
 
 1.  **Clone the repository**:
     ```bash
     git clone <repo_url>
-    cd Personal_finance_analyser
     ```
+    cd Personal_finance_analyser
+
 
 2.  **Install Dependencies**:
     ```bash
@@ -85,13 +118,15 @@ The system follows a modular architecture separating data processing, analysis, 
     ```env
     GROQ_API_KEY=your_groq_api_key_here
     ```
-
 4.  **Run the Application**:
-    ```bash
+       ```bash
     streamlit run src/app.py
-    ```
+       ```
 ## Outputs
+#### Dashboard Overview
 <img width="940" height="487" alt="image" src="https://github.com/user-attachments/assets/62699b13-8645-470c-83bb-9b4151893aec" />
+
+#### AI Advice Generation
 <img width="940" height="354" alt="image" src="https://github.com/user-attachments/assets/0e817525-31e1-4d3b-97e8-548fbdfda070" />
 
 
@@ -110,4 +145,6 @@ The system follows a modular architecture separating data processing, analysis, 
 
 *   **Multi-Modal Input**: Support for uploading images of receipts.
 *   **Forecasting**: Use time-series models to predict future balances.
-*   **Goal Tracking**: Allow users to set specific savings goals within the UI."# AI_Personal_Finance_Assisstant" 
+*   **Goal Tracking**: Allow users to set specific savings goals within the UI."**AI_Personal_Finance_Assisstant**"
+
+### Developed by Shyam Kumar 🚀
