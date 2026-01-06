@@ -62,6 +62,7 @@ Equips the AI with expert knowledge:
 
 ### 4. AI Advisor Agent (`advisor.py`)
 The "brain" of the operation. It synthesizes the analytics report and RAG context into a human-readable action plan using **Groq**.
+---
 
 ## 📂 File Structure
 
@@ -75,7 +76,7 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 │   └── advisor.py       # LLM orchestration
 ├── .env                 # API Keys (Git ignored)
 └── requirements.txt     # Project dependencies
-
+---
 ## 🛠️ Setup & Installation
 
 1.  **Clone the repository**:
