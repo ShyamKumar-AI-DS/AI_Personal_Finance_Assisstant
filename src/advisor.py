@@ -68,7 +68,7 @@ class FinancialAdvisor:
         Briefly assess the user's financial health (Healthy, At Risk, or Critical). Be direct but empathetic.
 
         **B. Immediate Action Items**
-        List 3 specific actions the user must take this week to stop the bleeding. Focus on the overspending categories.
+        In bullet list 3 specific actions the user must take this week to stop the bleeding. Focus on the overspending categories.
 
         **C. Strategic Budgeting Plan**
         Propose a specific strategy from the provided list (e.g., 50/30/20 or Zero-Based) that fits this user's situation. Explain WHY.
