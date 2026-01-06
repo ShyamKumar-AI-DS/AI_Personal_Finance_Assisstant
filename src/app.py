@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 st.set_page_config(
-    page_title="AI Personal Finance Assistant",
+    page_title="FinSight AI",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -45,7 +45,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("💰 AI Personal Finance Assistant")
+st.title("💰 FinSight AI - Personal Finance Advisor")
 st.markdown("### Analyzing your finances with RAG + OpenAI + AI Agents")
 
 # Sidebar for file upload
