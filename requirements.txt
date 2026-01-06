@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+seaborn
+openpyxl
+python-dotenv
+streamlit
+chromadb
+sentence-transformers
+groq
