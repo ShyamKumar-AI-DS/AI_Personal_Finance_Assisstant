@@ -100,7 +100,7 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 4.  **Run the Application**:
        ```bash
     streamlit run src/app.py
-        ```
+       ```
 ## Outputs
 #### Dashboard Overview
 <img width="940" height="487" alt="image" src="https://github.com/user-attachments/assets/62699b13-8645-470c-83bb-9b4151893aec" />
