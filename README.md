@@ -65,6 +65,7 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 ---
 
 ## 📂 File Structure
+~~~
 ├── src/
 │   ├── app.py           # Streamlit Dashboard UI
 │   ├── loader.py        # Data cleaning & normalization
@@ -74,6 +75,7 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 │   └── advisor.py       # LLM orchestration
 ├── .env                 # API Keys (Git ignored)
 └── requirements.txt     # Project dependencies
+~~~
 
 ## 🛠️ Setup & Installation
 
@@ -85,21 +87,24 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 
 
 2.  **Install Dependencies**:
-
+    ```bash
     pip install -r requirements.txt
-
+```
     *Key libraries: `streamlit`, `pandas`, `chromadb`, `sentence-transformers`, `groq`, `python-dotenv`, `matplotlib`, `seaborn`.*
 
 3.  **Environment Configuration**:
     Create a `.env` file in the root directory and add your API key:
-    GROQ_API_KEY=your_groq_api_key_here
-
+```env
+GROQ_API_KEY=your_groq_api_key_here
+```
 4.  **Run the Application**:
 
     streamlit run src/app.py
 
 ## Outputs
+#### Dashboard Overview
 <img width="940" height="487" alt="image" src="https://github.com/user-attachments/assets/62699b13-8645-470c-83bb-9b4151893aec" />
+#### AI Advice Generation
 <img width="940" height="354" alt="image" src="https://github.com/user-attachments/assets/0e817525-31e1-4d3b-97e8-548fbdfda070" />
 
 
