@@ -9,7 +9,8 @@ This project is designed to bridge the gap between raw financial data and person
 ## 🏗️ Architecture
 
 The system follows a modular architecture separating data processing, analysis, knowledge retrieval, and the user interface.
-![alt text](<Datasets/Flow Diagram.png>)
+<img width="800" height="533" alt="image" src="https://github.com/user-attachments/assets/fa0ac895-4074-41a1-bc39-8e5d47584e45" />
+
 
 ## 🚀 Project Phases
 
@@ -89,6 +90,10 @@ The system follows a modular architecture separating data processing, analysis, 
     ```bash
     streamlit run src/app.py
     ```
+## Outputs
+<img width="940" height="487" alt="image" src="https://github.com/user-attachments/assets/62699b13-8645-470c-83bb-9b4151893aec" />
+<img width="940" height="354" alt="image" src="https://github.com/user-attachments/assets/0e817525-31e1-4d3b-97e8-548fbdfda070" />
+
 
 ## 💡 Usage Flow
 
