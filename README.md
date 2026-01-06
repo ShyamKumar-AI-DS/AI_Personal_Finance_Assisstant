@@ -63,8 +63,6 @@ Equips the AI with expert knowledge:
 ### 4. AI Advisor Agent (`advisor.py`)
 The "brain" of the operation. It synthesizes the analytics report and RAG context into a human-readable action plan using **Groq**.
 
----
-
 ## 📂 File Structure
 
 ```bash
@@ -122,4 +120,5 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 
 *   **Multi-Modal Input**: Support for uploading images of receipts.
 *   **Forecasting**: Use time-series models to predict future balances.
-*   **Goal Tracking**: Allow users to set specific savings goals within the UI."# AI_Personal_Finance_Assisstant" 
+*   **Goal Tracking**: Allow users to set specific savings goals within the UI."# AI_Personal_Finance_Assisstant"
+---
