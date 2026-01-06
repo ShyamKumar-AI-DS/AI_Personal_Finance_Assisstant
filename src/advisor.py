@@ -112,7 +112,6 @@ class FinancialAdvisor:
             model="openai/gpt-oss-20b", 
             temperature=0.2,
         )
-        
         return completion.choices[0].message.content
 
 if __name__ == "__main__":
