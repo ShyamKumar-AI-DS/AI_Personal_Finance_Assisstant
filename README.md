@@ -146,3 +146,5 @@ The system is built with a modular approach to ensure scalability and easy debug
 *   **Multi-Modal Input**: Support for uploading images of receipts.
 *   **Forecasting**: Use time-series models to predict future balances.
 *   **Goal Tracking**: Allow users to set specific savings goals within the UI."**AI_Personal_Finance_Assisstant**"
+
+### Developed by Shyam Kumar 🚀
