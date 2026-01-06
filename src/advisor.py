@@ -109,11 +109,7 @@ class FinancialAdvisor:
                     "content": prompt
                 }
             ],
-<<<<<<< HEAD
             model="openai/gpt-oss-20b", 
-=======
-            model="llama-3.3-70b-versatile", 
->>>>>>> 14c6bee1708ed71972a8b6bc0e42e8f6321da319
             temperature=0.2,
         )
         
