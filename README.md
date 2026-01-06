@@ -65,8 +65,6 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 ---
 
 ## 📂 File Structure
-
-```bash
 ├── src/
 │   ├── app.py           # Streamlit Dashboard UI
 │   ├── loader.py        # Data cleaning & normalization
@@ -76,31 +74,30 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 │   └── advisor.py       # LLM orchestration
 ├── .env                 # API Keys (Git ignored)
 └── requirements.txt     # Project dependencies
----
+
 ## 🛠️ Setup & Installation
 
 1.  **Clone the repository**:
     ```bash
     git clone <repo_url>
-    cd Personal_finance_analyser
     ```
+    cd Personal_finance_analyser
+
 
 2.  **Install Dependencies**:
-    ```bash
+
     pip install -r requirements.txt
-    ```
+
     *Key libraries: `streamlit`, `pandas`, `chromadb`, `sentence-transformers`, `groq`, `python-dotenv`, `matplotlib`, `seaborn`.*
 
 3.  **Environment Configuration**:
     Create a `.env` file in the root directory and add your API key:
-    ```env
     GROQ_API_KEY=your_groq_api_key_here
-    ```
 
 4.  **Run the Application**:
-    ```bash
+
     streamlit run src/app.py
-    ```
+
 ## Outputs
 <img width="940" height="487" alt="image" src="https://github.com/user-attachments/assets/62699b13-8645-470c-83bb-9b4151893aec" />
 <img width="940" height="354" alt="image" src="https://github.com/user-attachments/assets/0e817525-31e1-4d3b-97e8-548fbdfda070" />
@@ -122,4 +119,3 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 *   **Multi-Modal Input**: Support for uploading images of receipts.
 *   **Forecasting**: Use time-series models to predict future balances.
 *   **Goal Tracking**: Allow users to set specific savings goals within the UI."# AI_Personal_Finance_Assisstant"
----
