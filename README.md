@@ -1,70 +1,82 @@
 # 💰 AI Personal Finance Agent
 
-An intelligent financial assistant that analyzes your personal transaction data, detects spending patterns, and uses Retrieval-Augmented Generation (RAG) to provide actionable, expert financial advice.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B.svg)](https://streamlit.io/)
+[![Groq](https://img.shields.io/badge/LLM-Groq-orange.svg)](https://groq.com/)
+[![VectorDB](https://img.shields.io/badge/VectorDB-ChromaDB-blueviolet.svg)](https://www.trychroma.com/)
 
-## 📋 Project Overview
+An intelligent financial assistant that transforms raw transaction data into actionable, expert financial advice. By leveraging **Retrieval-Augmented Generation (RAG)**, the agent provides personalized coaching based on proven budgeting frameworks like the 50/30/20 rule.
 
-This project is designed to bridge the gap between raw financial data and personalized financial coaching. By combining traditional data analytics with Generative AI, the system not only tells you *what* you spent but *how* to improve your financial health based on proven budgeting strategies (e.g., 50/30/20 rule, Zero-Based Budgeting).
+---
+
+## 🌟 Key Features
+
+* 📊 **Automated Ingestion**: Support for `.csv` and `.xlsx` bank statements with automatic cleaning.
+* 🔍 **Smart Analytics**: Monthly trend tracking and automated categorization of Income vs. Expenses.
+* 🚫 **Subscription Detective**: Automatically identifies recurring charges (Netflix, Gym, etc.).
+* 🧠 **RAG-Powered Advice**: Combines your financial data with a knowledge base of expert budgeting strategies.
+* 🤖 **AI Executive Summary**: Generates a high-level overview and a step-by-step action plan using LLMs.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology |
+| :--- | :--- |
+| **Language** | Python 3.9+ |
+| **Interface** | Streamlit |
+| **LLM Inference** | Groq (Llama models) |
+| **Embeddings** | SentenceTransformers (`all-MiniLM-L6-v2`) |
+| **Vector Store** | ChromaDB |
+| **Data Handling** | Pandas, Openpyxl |
+
+---
 
 ## 🏗️ Architecture
 
-The system follows a modular architecture separating data processing, analysis, knowledge retrieval, and the user interface.
-<img width="800" height="533" alt="image" src="https://github.com/user-attachments/assets/fa0ac895-4074-41a1-bc39-8e5d47584e45" />
+The system is built with a modular approach to ensure scalability and easy debugging.
 
+> [!TIP]
+> The separation of the **Analytics Engine** from the **AI Advisor** ensures the LLM receives structured, factual data, reducing potential hallucinations.
+
+<img width="800" alt="Architecture Diagram" src="https://github.com/user-attachments/assets/fa0ac895-4074-41a1-bc39-8e5d47584e45" />
+
+---
 
 ## 🚀 Project Phases
 
-### Phase 1: Data Ingestion & Preprocessing (`loader.py`)
-*   **Objective**: Create a robust pipeline to handle messy user data.
-*   **Features**:
-    *   Supports `.csv` and `.xlsx` formats.
-    *   Standardizes column names (snake_case).
-    *   Parses dates and normalizes numerical amounts.
-    *   Removes duplicates to ensure data integrity.
+### 1. Data Ingestion (`loader.py`)
+Creates a robust pipeline to handle messy user data:
+* Standardizes column names to `snake_case`.
+* Parses dates and normalizes numerical amounts.
+* Removes duplicates to ensure data integrity.
 
-### Phase 2: Financial Analytics Engine (`analytics.py` & `categorizer.py`)
-*   **Objective**: Extract meaningful insights from the cleaned data.
-*   **Features**:
-    *   **Trend Analysis**: Monthly income vs. expense tracking.
-    *   **Subscription Detection**: Identifies recurring charges based on amount and frequency (e.g., Netflix, Gym).
-    *   **Overspending Alerts**: Flags categories where current spending exceeds the historical average by a threshold (default 1.2x).
-    *   **Categorization**: Splits data into Income and Expense streams for visualization.
+### 2. Analytics Engine (`analytics.py` & `categorizer.py`)
+Extracts meaningful insights:
+* **Trend Analysis**: Tracking the "burn rate" and savings ratio across months.
+* **Overspending Alerts**: Flags categories exceeding 1.2x historical averages.
 
-### Phase 3: RAG Knowledge Base (`rag.py`)
-*   **Objective**: Equip the AI with expert financial knowledge.
-*   **Implementation**:
-    *   **Embeddings**: Uses `SentenceTransformer` (`all-MiniLM-L6-v2`) to convert text into vector embeddings.
-    *   **Vector Store**: Uses `ChromaDB` to store and retrieve budgeting guidelines.
-    *   **Retrieval**: Fetches relevant financial strategies based on the user's specific financial situation (e.g., "debt reduction" strategies if savings are negative).
+### 3. RAG Knowledge Base (`rag.py`)
+Equips the AI with expert knowledge:
+* **Vector Search**: Uses `ChromaDB` to fetch specific strategies (e.g., "Debt Snowball") based on the user's current financial situation.
 
-### Phase 4: AI Advisor Agent (`advisor.py`)
-*   **Objective**: Synthesize data and knowledge into human-readable advice.
-*   **Workflow**:
-    1.  Receives the structured report from the Analytics Engine.
-    2.  Queries the RAG system for relevant context.
-    3.  Constructs a detailed prompt containing the user's financial health, alerts, and retrieved strategies.
-    4.  Calls the LLM (via Groq) to generate a personalized "Executive Summary" and "Action Plan".
+### 4. AI Advisor Agent (`advisor.py`)
+The "brain" of the operation. It synthesizes the analytics report and RAG context into a human-readable action plan using **Groq**.
 
-### Phase 5: User Interface (`app.py`)
-*   **Objective**: Provide an interactive dashboard for the user.
-*   **Tech Stack**: Streamlit.
-*   **Features**:
-    *   File uploader.
-    *   Interactive metric cards (Income, Expense, Savings).
-    *   Charts (Expense Breakdown, Monthly Trends).
-    *   "Generate Plan" button to trigger the AI Advisor.
+---
 
 ## 📂 File Structure
 
-| File | Description |
-|------|-------------|
-| `src/app.py` | Main entry point. Streamlit dashboard application. |
-| `src/loader.py` | Handles file loading, cleaning, and normalization. |
-| `src/analytics.py` | Core logic for calculating totals, trends, and alerts. |
-| `src/categorizer.py` | Helper for categorization and generating chart data. |
-| `src/rag.py` | Manages the Vector Database and document retrieval. |
-| `src/advisor.py` | Orchestrates the analysis and LLM interaction. |
-| `src/budget_guidelines.py` | (Optional) Source text data for the RAG knowledge base. |
+```bash
+├── src/
+│   ├── app.py           # Streamlit Dashboard UI
+│   ├── loader.py        # Data cleaning & normalization
+│   ├── analytics.py     # Financial logic & trend detection
+│   ├── categorizer.py   # Chart data generation
+│   ├── rag.py           # Vector DB & retrieval logic
+│   └── advisor.py       # LLM orchestration
+├── .env                 # API Keys (Git ignored)
+└── requirements.txt     # Project dependencies
 
 ## 🛠️ Setup & Installation
 
