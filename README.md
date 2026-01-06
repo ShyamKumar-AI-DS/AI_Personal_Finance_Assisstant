@@ -124,4 +124,4 @@ The "brain" of the operation. It synthesizes the analytics report and RAG contex
 
 *   **Multi-Modal Input**: Support for uploading images of receipts.
 *   **Forecasting**: Use time-series models to predict future balances.
-*   **Goal Tracking**: Allow users to set specific savings goals within the UI."# AI_Personal_Finance_Assisstant"
+*   **Goal Tracking**: Allow users to set specific savings goals within the UI."**AI_Personal_Finance_Assisstant**"
