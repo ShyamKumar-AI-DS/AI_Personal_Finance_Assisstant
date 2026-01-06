@@ -142,6 +142,8 @@ with col_chart1:
     expenses = expenses.sort_values(ascending=False).head(10)
     sns.barplot(x=expenses.values, y=expenses.index, ax=ax1, palette="viridis")
     ax1.set_xlabel("Amount")
+    ax1.set_ylabel("Category")
+    ax1.set_title("Top 10 Expense Categories")
     st.pyplot(fig1)
 
 with col_chart2:
@@ -149,7 +151,9 @@ with col_chart2:
     fig2, ax2 = plt.subplots(figsize=(8, 4))
     trends = analyzer.get_monthly_trends()
     sns.lineplot(data=trends[['Income', 'Expense']], ax=ax2, markers=True)
+    ax2.set_xlabel("Month")
     ax2.set_ylabel("Amount")
+    ax2.set_title("Monthly Income vs. Expenses")
     st.pyplot(fig2)
 
 st.divider()

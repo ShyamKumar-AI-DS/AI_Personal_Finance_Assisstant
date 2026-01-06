@@ -65,19 +65,19 @@ class FinancialAdvisor:
         Based on the data above, provide a comprehensive financial plan:
         
         **A. Executive Summary**
-        Briefly assess the user's financial health (Healthy, At Risk, or Critical). Be direct but empathetic.
+        Briefly assess the user's financial health (Healthy, At Risk, or Critical) and explain in simple terms. Be clear and direct but empathetic.
 
         **B. Immediate Action Items**
-        List 3 specific actions the user must take this week to stop the bleeding. Focus on the overspending categories.
+        In bullet list 3 specific actions the user must take this week to stop the bleeding. Focus on the overspending categories.
 
         **C. Strategic Budgeting Plan**
-        Propose a specific strategy from the provided list (e.g., 50/30/20 or Zero-Based) that fits this user's situation. Explain WHY.
+        In bullet list propose a specific strategy from the provided list (e.g., 50/30/20 or Zero-Based) that fits this user's situation. Explain WHY.
 
         **D. Savings Roadmap**
-        Calculate if they can become positive next month by cutting the 'Recoverable Waste' mentioned in the overspending section.
+        Tabulate and calculate if they can become positive next month by cutting the 'Recoverable Waste' mentioned in the overspending section.
 
         **E. Habit Building**
-        Suggest one simple daily or weekly habit to improve financial discipline.
+        In bullet list suggest one simple daily or weekly habit to improve financial discipline.
 
         Keep the tone professional, encouraging, and highly actionable.
         """
@@ -109,8 +109,8 @@ class FinancialAdvisor:
                     "content": prompt
                 }
             ],
-            model="openai/gpt-oss-120b", 
-            temperature=0.6,
+            model="openai/gpt-oss-20b", 
+            temperature=0.2,
         )
         
         return completion.choices[0].message.content
