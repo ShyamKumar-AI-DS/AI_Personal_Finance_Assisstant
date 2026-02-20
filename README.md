@@ -5,7 +5,7 @@
 [![Groq](https://img.shields.io/badge/LLM-Groq-orange.svg)](https://groq.com/)
 [![VectorDB](https://img.shields.io/badge/VectorDB-ChromaDB-blueviolet.svg)](https://www.trychroma.com/)
 
-An intelligent financial assistant that transforms raw transaction data into actionable, expert financial advice. By leveraging **Retrieval-Augmented Generation (RAG)**, the agent provides personalized coaching based on proven budgeting frameworks like the 50/30/20 rule.
+FinSight AI is a GenAI-powered personal finance assistant that converts raw transaction data into clear financial dashboards and actionable guidance. It ingests bank statements, performs automated spending analysis and trend detection, and applies Retrieval-Augmented Generation (RAG) to deliver personalized, expert-backed financial advice. Designed with a modular architecture, the system separates deterministic analytics from LLM reasoning to ensure reliable insights, reduced hallucinations, and explainable recommendations—making it suitable for students, professionals, and families seeking data-driven financial clarity.
 
 ---
 
