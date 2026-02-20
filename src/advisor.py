@@ -110,7 +110,7 @@ class FinancialAdvisor:
                 }
             ],
             model="openai/gpt-oss-20b", 
-            temperature=0.2,
+            temperature=0.4,
         )
         return completion.choices[0].message.content
 
