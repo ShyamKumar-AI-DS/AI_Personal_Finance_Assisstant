@@ -9,3 +9,4 @@ chromadb
 sentence-transformers
 groq
 altair<5
+imghdr
