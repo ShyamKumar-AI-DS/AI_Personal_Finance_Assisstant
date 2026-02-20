@@ -158,29 +158,6 @@ with col_chart2:
 
 st.divider()
 
-# 3. Insights Section
-st.subheader("⚠️ Risk Analysis")
-
-# Overspending
-with st.expander("Overspending Alerts", expanded=True):
-    overspending = report['Overspending Alerts (Latest Month)']
-    if overspending:
-        for cat, data in overspending.items():
-            st.error(f"{cat}: ${data['current']:.0f} (Avg: ${data['average']:.0f}) \n\n(+{data['pct_over']:.1f}%)")
-    else:
-        st.success("Spending is within average limits.")
-
-# # Recurrent
-# with st.expander("Recurrent Charges", expanded=True):
-#     recurrent = report['Recurrent Charges']
-#     if recurrent:
-#         for item in recurrent:
-#             st.write(f"** {item['description']} **: ${item['amount']:.0f} ({item['estimated_interval']})")
-#     else:
-#         st.write("No recurring subscriptions detected.") 
-
-st.divider()
-
 st.subheader("🤖 AI Financial Advisor")
 st.caption("Powered by OpenAI & RAG Knowledge Base")
 
@@ -195,3 +172,28 @@ if st.button("Generate Personalized Financial Plan"):
             st.error(f"AI Error: {e}")
 else:
     st.info("Click the button to generate a detailed financial plan based on your data.")
+
+st.divider()
+
+# 3. Insights Section
+st.subheader("⚠️ Risk Analysis")
+
+# Overspending
+with st.expander("Overspending Alerts"):
+    overspending = report['Overspending Alerts (Latest Month)']
+    if overspending:
+        for cat, data in overspending.items():
+            st.error(f"{cat}: ${data['current']:.0f} (Avg: ${data['average']:.0f}) \n\n(+{data['pct_over']:.1f}%)")
+    else:
+        st.success("Spending is within average limits.")
+
+# Recurrent
+with st.expander("Recurrent Charges"):
+    recurrent = report['Recurrent Charges']
+    if recurrent:
+        for item in recurrent:
+            st.write(f"** {item['description']} **: ${item['amount']:.0f} ({item['estimated_interval']})")
+    else:
+        st.write("No recurring subscriptions detected.") 
+
+st.divider()
